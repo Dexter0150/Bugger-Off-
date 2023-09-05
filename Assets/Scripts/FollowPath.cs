@@ -12,6 +12,8 @@ public class FollowPath : MonoBehaviour
     [SerializeField]
     private int waypointIndex = 0;
 
+    public bool isNextRound = false;
+
     private void Start()
     {
         transform.position = waypoints[waypointIndex].transform.position;
@@ -19,7 +21,12 @@ public class FollowPath : MonoBehaviour
 
     private void Update()
     {
-        Move();
+
+        if (isNextRound == true)
+        {
+            Move();
+        }
+
     }
 
     private void Move()
@@ -33,5 +40,10 @@ public class FollowPath : MonoBehaviour
                 waypointIndex += 1;
             }
         }
+    }
+
+    public void NextRound()
+    {
+        isNextRound = true;
     }
 }
