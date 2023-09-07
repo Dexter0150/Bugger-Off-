@@ -16,7 +16,7 @@ public class FollowPath : MonoBehaviour
 
     private void Start()
     {
-        transform.position = waypoints[waypointIndex].transform.position;
+        //transform.position = waypoints[waypointIndex].transform.position;
     }
 
     private void Update()
@@ -25,15 +25,18 @@ public class FollowPath : MonoBehaviour
         if (isNextRound == true)
         {
             Move();
+
         }
 
     }
 
     private void Move()
     {
+        
         if (waypointIndex <= waypoints.Length - 1)
         {
             transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+
 
             if (transform.position == waypoints[waypointIndex].transform.position)
             {
