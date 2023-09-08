@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Frog : MonoBehaviour
 {
-    public string name;
+    public string names;
 
     public float fireRate = 1;
     public float radius = 1;
